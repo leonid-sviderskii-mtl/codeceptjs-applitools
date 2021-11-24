@@ -6,9 +6,14 @@
 ### To run Applitools on Lamdatest:
 1. Create `.env` file
 2. Provide credentials for:
+
     `LAMBDATEST_USERNAME`
+    
     `LAMBDATEST_KEY`
+    
     `APPLITOOLS_KEY`
 
 ### To run the tests:
+`npm i`
+
 `npm run test`
