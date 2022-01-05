@@ -13,8 +13,10 @@ jobs:
       CI: true
       DEFAULT_URL: "https://test.com"
     steps:
-      - name: Determine Base URL
-        if: ${{ github.event.inputs.url }}
-        run: |
-          $DEFAULT_URL = ${{ github.event.inputs.url }}
-          echo $DEFAULT_URL
+      - name: Set the variables
+        env:
+          DEFAULT_URL: 'https://test.com' # here is the default message
+        run: echo "MESSAGE=${{ github.event.inputs.url || env.DEFAULT_URL }}" >> $GITHUB_ENV
+
+      - name: Print some text
+        run: echo "$MESSAGE" # prints the environmental variable, MESSAGE
