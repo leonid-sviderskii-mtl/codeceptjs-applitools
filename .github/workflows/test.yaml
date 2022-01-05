@@ -12,7 +12,6 @@ on:
 jobs:
   featuretests:
     runs-on: ubuntu-latest
-      CI: true
     steps:
       - name: Set the variables
         env:
