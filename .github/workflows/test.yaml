@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Base URL"
+        required: true
+        default: "https://unity.com"
+
+jobs:
+  featuretests:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      DEFAULT_URL: "https://unity.com"
+    - name: Determine Base URL
+      if: 1 == 1
+        run: |
+          echo "WORKS"
+    # - name: One Trust Tests
+    #   run: npm run tests:lambda:onetrust:ci -- --profile $BASE_URL
