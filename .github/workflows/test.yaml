@@ -1,10 +1,12 @@
 on:
+  schedule:
+    - cron: '1/2 * * * *'
   workflow_dispatch:
     inputs:
       url:
         description: "Base URL"
-        required: false
-        # default: "https://test-dispatch.com"
+        required: true
+        default: "https://test-dispatch.com"
 
 jobs:
   featuretests:
@@ -15,8 +17,8 @@ jobs:
     steps:
       - name: Set the variables
         env:
-          DEFAULT_URL: 'https://test.com' # here is the default message
-        run: echo "MESSAGE=${{ github.event.inputs.url || env.DEFAULT_URL }}" >> $GITHUB_ENV
+          DEFAULT_URL: 'https://test.com'
+        run: echo "BASE_URL=${{ github.event.inputs.url || env.DEFAULT_URL }}" >> $GITHUB_ENV
 
       - name: Print some text
-        run: echo "$MESSAGE" # prints the environmental variable, MESSAGE
+        run: echo "$BASE_URL"
