@@ -12,9 +12,7 @@ on:
 jobs:
   featuretests:
     runs-on: ubuntu-latest
-    env:
       CI: true
-      DEFAULT_URL: "https://test.com"
     steps:
       - name: Set the variables
         env:
