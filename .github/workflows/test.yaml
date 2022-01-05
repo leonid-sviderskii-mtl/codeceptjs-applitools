@@ -1,7 +1,7 @@
 on:
-  push:
-  schedule:
-    - cron: '* * * * *'
+  # push:
+  # schedule:
+  #   - cron: '* * * * *'
   workflow_dispatch:
     inputs:
       url:
