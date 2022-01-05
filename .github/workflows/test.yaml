@@ -12,9 +12,9 @@ jobs:
     env:
       CI: true
       DEFAULT_URL: "https://unity.com"
+    steps:
     - name: Determine Base URL
       if: 1 == 1
-        run: |
-          echo "WORKS"
+        run: echo "WORKS"
     # - name: One Trust Tests
     #   run: npm run tests:lambda:onetrust:ci -- --profile $BASE_URL
