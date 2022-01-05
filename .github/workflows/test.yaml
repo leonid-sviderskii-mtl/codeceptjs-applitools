@@ -3,8 +3,8 @@ on:
     inputs:
       url:
         description: "Base URL"
-        required: true
-        default: "https://test-dispatch.com"
+        required: false
+        # default: "https://test-dispatch.com"
 
 jobs:
   featuretests:
